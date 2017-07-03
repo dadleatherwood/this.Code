@@ -9,5 +9,12 @@
 }
 
 /*navbar*/
-
+#brand {
+  font-size: 32px;
+  font-family: 'Droid Serif', serif;
+  margin-left: 2.5em;
+}
+#code {
+  color: #7AC70C;
+}
 /*login forms*/
