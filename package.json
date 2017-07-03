@@ -1,0 +1,25 @@
+{
+  "name": "this-code",
+  "version": "1.0.0",
+  "description": "A coding challenge website to offer practice for upcoming coders",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dadleatherwood/this.Code.git"
+  },
+  "author": "Jacob Leatherwood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dadleatherwood/this.Code/issues"
+  },
+  "homepage": "https://github.com/dadleatherwood/this.Code#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "massive": "^3.0.0"
+  }
+}
