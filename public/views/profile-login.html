@@ -3,13 +3,14 @@
     <div class="panel-heading">this.Code ( ) Sign Up</div>
     <div class="panel-body">
       <form>
-        <input type="text" class="form-control" ng-model="#" placeholder="First Name" />
-        <input type="text" class="form-control" ng-model="#" placeholder="Last Name" />
-        <input type="text" class="form-control" ng-model="#" placeholder="Username" />
-        <input type="text" class="form-control" ng-model="#" placeholder="Email" />
-        <input type="password" class="form-control" ng-model="#" placeholder="Password" />
-        <input type="password" class="form-control" placeholder="Confirm Password" />
-        <button ui-sref="challenge-splash" type="button" class="btn btn-info" id="sign-up-btn">Sign Up</button>
+        <input type="text" class="form-control" ng-model="user.first_name" placeholder="First Name" />
+        <input type="text" class="form-control" ng-model="user.last_name" placeholder="Last Name" />
+        <input type="text" class="form-control" ng-model="user.username" placeholder="Username" />
+        <input type="text" class="form-control" ng-model="user.email" placeholder="Email" />
+        <input type="password" class="form-control" ng-model="user.password" placeholder="Password" />
+        <input type="password" class="form-control" ng-model="user.confirmPassword" placeholder="Confirm Password" />
+        <button type="button" class="btn btn-info" id="sign-up-btn" ng-click="createUser(user)">Sign Up</button>
+        <div>{{createError}}</div>
       </form>
 
     </div>
@@ -18,9 +19,10 @@
     <div class="panel-heading">this.Code ( ) Login</div>
     <div class="panel-body">
       <form>
-        <input type="text" class="form-control" ng-model="#" placeholder="Username or Email" />
-        <input type="password" class="form-control" ng-model="#" placeholder="Password" />
-        <button ui-sref="challenge-splash" type="button" class="btn btn-info" id="login-btn">Login</button>
+        <input type="text" class="form-control" ng-model="returningUser.username" placeholder="Username or Email" />
+        <input type="password" class="form-control" ng-model="returningUser.password" placeholder="Password" />
+        <button type="button" class="btn btn-info" id="login-btn" ng-click="loginUser(returningUser)">Login</button>
+        <div>{{loginError}}</div>
       </form>
 
     </div>

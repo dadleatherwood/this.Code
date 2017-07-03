@@ -14,7 +14,15 @@ angular.module('myApp',['ui.router'])
 
     .state('login', {
       url: '/login',
-      templateUrl: './views/profile-login.html'
+      templateUrl: './views/profile-login.html',
+      controller: 'loginCtrl'
     })
+
+    .state('challenges', {
+      url: '/challenges',
+      templateUrl: './views/challenge-splash.html',
+      controller: 'challengesCtrl'
+    })
+
 
 })

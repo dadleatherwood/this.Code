@@ -1,19 +1,25 @@
 module.exports = {
 
-  create: function (req, res, next) {
+  createUser: function (req, res, next) {
     const dbInstance = req.app.get('db')
-    const {firstName, lastName, username, email, password} = req.body
-    const inputs = [firstName, lastName, username, email, password]
+    const {first_name, last_name, username, email, password} = req.body
+    const inputs = [first_name, last_name, username, email, password]
     dbInstance.create_user(inputs).then(function(user){
       res.send(user)
     })
   },
 
-  getUser: function(req, res, next) {
+  loginUser: function(req, res, next) {
     const dbInstance = req.app.get('db')
-    let id = req.params.userId
-    dbInstance.read_user(id).then(function(user){
-      res.send(user)
+    const username = req.body.username
+    const password = req.body.password
+    dbInstance.read_user([username, password]).then(function(user){
+      if (user.length) {
+          return res.status(200).json(user)
+      }
+      return res.status(401).json({message: "Incorrect login"})
+    }).catch(function(err) {
+      console.log(err)
     })
   }
 
