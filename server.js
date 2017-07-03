@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const config = require('./config.js')
 const massive = require('massive')
+const usersCtrl = require('./usersCtrl.js')
 
 const app = express()
 

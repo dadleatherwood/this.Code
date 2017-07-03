@@ -12,14 +12,9 @@ angular.module('myApp',['ui.router'])
       templateUrl: './views/splash.html'
     })
 
-    .state('sign-up', {
-      url: '/sign-up',
-      templateUrl: './views/sign-up.html'
-    })
-
     .state('login', {
       url: '/login',
-      templateUrl: './views/login-form.html'
+      templateUrl: './views/profile-login.html'
     })
-    
+
 })
