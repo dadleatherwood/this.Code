@@ -14,7 +14,31 @@
   font-family: 'Droid Serif', serif;
   margin-left: 2.5em;
 }
+
 #code {
   color: #7AC70C;
 }
 /*login forms*/
+
+
+/*challenge splash*/
+.challenge-menu-btn {
+  margin: 3em;
+  background-color: #3EBBF7;
+  font-family: 'Droid Serif', serif;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.challenge-list-container {
+  margin: 3em;
+  text-align: center;
+  }
+
+/*challenge individual*/
+.challenge-containers {
+  margin: 2em;
+  height: 100px;
+  border: 2px solid #3EBBF7;
+  border-radius: 2em;
+}
