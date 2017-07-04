@@ -36,4 +36,23 @@ angular.module('myApp').service('myAppSrv',function($http){
       return result.data
     })
   }
+  this.testCode = function(code){
+    return $http.post('/api/test', code).then(result => {
+      var func = eval(`(function outer() {return ${code.code}})()`)
+      if (typeof func !== 'function') {
+
+      } else {
+
+      }
+      for (var test of result.data) {
+        var answer = func(test.test_input)
+        if (answer === test.test_output) {
+          test.result = "Passed"
+        } else {
+          test.result = "Failed, expected " + test.test_output + "; received " + answer
+        }
+      }
+      return result.data
+    })
+  }
 })

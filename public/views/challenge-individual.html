@@ -16,13 +16,16 @@
     <div class="col-md-10">
       <div class="form-group">
         <label>Code Editor</label>
-        <textarea class="form-control" id="code-editor" rows="10"></textarea>
+        <textarea class="form-control" id="code-editor" rows="10" ng-model="code.code"></textarea>
       </div>
     </div>
   </div>
   <div class="row">
-    <button type="button" class="btn btn-success hint-btn col-md-5" ng-click="doSomething()">Run</button>
-    <button type="button" class="btn btn-success hint-btn col-md-5" ng-click="doSomething()">Submit</button>
+    <button type="button" class="btn btn-success hint-btn col-md-5" ng-click="testCode(code)">Run</button>
+  </div>
+  <div class="row" ng-repeat="test in tests">
+    {{test.result}}
+    <!-- Make Pretty, possbily change text to green when passed, red when failed -->
   </div>
 
 </div>

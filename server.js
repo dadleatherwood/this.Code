@@ -15,8 +15,11 @@ massive('postgres://localhost:5432/this_code')
   .then(db => {
     app.set('db', db)
     db.create_users_table()
-    db.create_topics_table().then(function() {
-      db.create_challenges_table()
+    db.create_topics_table()
+    .then(() => db.create_challenges_table())
+    .then(() => db.create_tests_table())
+    .catch(err => {
+      console.log(err)
     })
   })
 
@@ -25,6 +28,7 @@ app.post('/api/users',usersCtrl.createUser)
 app.post('/api/login', usersCtrl.loginUser)
 app.get('/api/challenges',challengesCtrl.getChallenges)
 app.get('/api/challenge/:id', challengesCtrl.getChallengeById)
+app.post('/api/test',challengesCtrl.testCode)
 
 
 app.listen(3000, function(){
