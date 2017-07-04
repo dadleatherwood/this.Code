@@ -3,6 +3,6 @@ CREATE TABLE IF NOT EXISTS challenges (
   name varchar(255),
   difficulty varchar(255),
   description varchar(255),
-  test_id integer,
-  value integer
+  value integer,
+  topic_id integer references topics (id)
 );

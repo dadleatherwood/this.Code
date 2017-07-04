@@ -25,7 +25,7 @@ angular.module('myApp',['ui.router'])
     })
 
     .state('challenge', {
-      url: '/challenge',
+      url: '/challenge/:id',
       templateUrl: './views/challenge-individual.html',
       controller: 'challengeCtrl'
     })

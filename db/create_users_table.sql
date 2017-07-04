@@ -8,5 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
   imageurl varchar(255),
   streak_count integer,
   badge_id integer,
-  rank_id integer
+  rank_id integer,
+  score integer,
+  days_of_code integer
 );

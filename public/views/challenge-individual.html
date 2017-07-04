@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-10 challenge-containers">
-      Challenge Description
+      {{challenge.description}}
     </div>
   </div>
   <div class="row">
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="row">
-    <button type="button" class="btn btn-danger hint-btn col-md-3" ng-click="#">Hint</button>
+    <button type="button" class="btn btn-danger hint-btn col-md-3" ng-click="doSomething()">Hint</button>
   </div>
   <div class="row">
     <div class="col-md-10">
@@ -21,8 +21,8 @@
     </div>
   </div>
   <div class="row">
-    <button type="button" class="btn btn-success hint-btn col-md-5" ng-click="#">Run</button>
-    <button type="button" class="btn btn-success hint-btn col-md-5" ng-click="#">Submit</button>
+    <button type="button" class="btn btn-success hint-btn col-md-5" ng-click="doSomething()">Run</button>
+    <button type="button" class="btn btn-success hint-btn col-md-5" ng-click="doSomething()">Submit</button>
   </div>
 
 </div>
