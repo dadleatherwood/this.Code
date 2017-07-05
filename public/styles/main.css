@@ -24,8 +24,10 @@
 .jumbotron {
   display: flex;
   justify-content: center;
-  background-image: url("public/assets/images/trees.jpeg")no-repeat center center;
+  background-image: url("../assets/images/oXAZlPv.png");
+  background-size: cover;
   height: 50vh;
+  text-align: center;
 }
 
 .intro-container {
@@ -72,8 +74,8 @@
 
 
 /*challenge splash*/
-.challenge-splash {
-  height: 100vh;
+.challenge-intro-container {
+  max-width: 700px;
 }
 .challenge-menu-btn {
   background-color: #4CAF50;
@@ -90,7 +92,43 @@
   display: flex;
   justify-content: space-around;
   border: 1px solid black;
-  background-color: #109AF7;
+  background-color: #F4F4F4;
+  }
+
+  #beginner-btn {
+    background-image: url("../assets/images/green background.jpg");
+    background-size: cover;
+  }
+
+  #intermediate-btn {
+    background-image: url("../assets/images/yellow background.jpg");
+    background-size: cover;
+  }
+
+  #master-btn {
+    background-image: url("../assets/images/red background.jpg");
+    background-size: cover;
+  }
+
+  #beginner-challenges {
+    margin: 10px auto;
+    padding: 20px;
+    background-image: url("../assets/images/green background.jpg");
+    background-size: cover;
+  }
+
+  #intermediate-challenges {
+    margin: 2em auto;
+    padding: 20px;
+    background-image: url("../assets/images/yellow background.jpg");
+    background-size: cover;
+  }
+
+  #master-challenges {
+    margin: 10px auto;
+    padding: 20px;
+    background-image: url("../assets/images/red background.jpg");
+    background-size: cover;
   }
 
 /*challenge individual*/

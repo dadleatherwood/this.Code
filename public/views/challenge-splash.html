@@ -1,43 +1,42 @@
-<div class="container-fluid challenge-splash">
-  <div class="row">
-    <div class="col-xs-12 col-md-4">
-      <button type="button" class="btn challenge-menu-btn">Beginner</button>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <button type="button" class="btn challenge-menu-btn" ng-click="doSomething()">Intermediate</button>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <button type="button" class="btn challenge-menu-btn" ng-click="doSomething()">Master</button>
+
+  <div class="jumbotron challenge-jumbotron">
+    <div class="challenge-intro-container">
+      <h1>Challenge Page</h1>
+      <p>
+        Time to have some fun.  Here you will find challenges that are designed to push your coding limits, and we hope you have fun while learning.
+      </p>
+      <button class="btn btn-success btn-lg" ui-sref="#beginner-challenges">Beginner</button>
+      <button class="btn btn-success btn-lg" ui-sref="#intermediate-challenges">Intermediate</button>
+      <button class="btn btn-success btn-lg" ui-sref="#master-challenges">Master</button>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-offset-2 col-md-8 challenge-list" id="beginner-challenges" ng-repeat="challenge in challenges.beginner">
+  <div class="row" id="beginner-challenges">
+    <div class="col-md-offset-2 col-md-8 challenge-list"  ng-repeat="challenge in challenges.beginner">
       <div>
-        <h2 ui-sref="challenge({id:challenge.id})">Title: {{challenge.name}}</h2>
+        <h2 ui-sref="challenge({id:challenge.id})"> {{challenge.name}}</h2>
       </div>
       <div>
         <h2>Point Value: {{challenge.value}}</h2>
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row" id="intermediate-challenges">
     <div class="col-md-offset-2 col-md-8 challenge-list" ng-repeat="challenge in challenges.intermediate">
       <div>
-        <h2 ui-sref="challenge({id:challenge.id})">Title: {{challenge.name}}</h2>
+        <h2 ui-sref="challenge({id:challenge.id})">{{challenge.name}}</h2>
       </div>
       <div>
         <h2>Point Value: {{challenge.value}}</h2>
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row" id="master-challenges">
     <div class="col-md-offset-2 col-md-8 challenge-list" ng-repeat="challenge in challenges.master">
       <div>
-        <h2 ui-sref="challenge({id:challenge.id})">Title: {{challenge.name}}</h2>
+        <h2 ui-sref="challenge({id:challenge.id})">{{challenge.name}}</h2>
       </div>
       <div>
         <h2>Point Value: {{challenge.value}}</h2>
       </div>
     </div>
   </div>
-</div>
