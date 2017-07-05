@@ -14,16 +14,16 @@
     <!-- links -->
     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a ui-sref="challenges">Challenges <span class="sr-only">(current)</span></a></li>
+        <li><a ng-click="loggingIn = !loggingIn" ui-sref="challenges">Challenges <span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
           <a ui-sref="login" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Social <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a ui-sref="login">LeaderBoard</a></li>
             <li><a ui-sref="login">Discussion</a></li>
-            <li>
-              <button ng-hide="loggingIn" ui-sref="login" type="button" class="btn btn-success navbar-btn">Get Started</button>
-            </li>
           </ul>
+        </li>
+        <li>
+          <button ng-hide="loggedIn || loggingIn" ng-click="loggingIn = !loggingIn" ui-sref="login" type="button" class="btn btn-success navbar-btn">Get Started</button>
         </li>
       </ul>
   </div>
@@ -57,7 +57,7 @@
           <li><a ui-sref="login">Profile</a></li>
         </li>
         <li>
-          <button ng-show="loggingIn" ui-sref="home" type="button" class="btn btn-danger navbar-btn">Sign Out</button>
+          <button ng-show="loggedIn" ui-sref="home" type="button" class="btn btn-danger navbar-btn">Sign Out</button>
         </li>
       </ul>
   </div>

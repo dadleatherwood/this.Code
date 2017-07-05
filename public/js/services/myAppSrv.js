@@ -1,4 +1,4 @@
-angular.module('myApp').service('myAppSrv',function($http){
+angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   var self = this
   this.user = {}
   this.createUser = function(user){
@@ -9,6 +9,7 @@ angular.module('myApp').service('myAppSrv',function($http){
   }
   this.loginUser = function(user){
     return $http.post('/api/login', user).then(result => {
+      $rootScope.$emit('loggedIn', null)
       self.user = result.data
       return result
     })
