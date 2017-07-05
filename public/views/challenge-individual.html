@@ -10,17 +10,19 @@
     </div>
   </div>
   <div class="row">
-    <button type="button" class="btn btn-danger hint-btn col-xs-12 col-md-offset-4 col-md-4" ng-click="">Hint</button>
-  </div>
-  <div class="row">
     <div class="col-md-offset-1 col-md-10">
       <div class="form-group">
         <textarea class="form-control" id="code-editor" rows="10" ng-model="code.code" placeholder="Put Your Code Here"></textarea>
       </div>
     </div>
   </div>
-  <div class="row">
-    <button type="button" class="btn btn-success run-btn col-xs-12 col-md-offset-4 col-md-4" ng-click="testCode(code)">Run</button>
+  <div class="row challenge-buttons">
+    <div class="col-xs-12 col-md-offest-2 col-md-4">
+      <button type="button" class="btn btn-success run-btn col-xs-12 col-md-offset-4 col-md-4" ng-click="testCode(code)">Run</button>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <button type="button" class="btn btn-danger hint-btn col-xs-12 col-md-offset-4 col-md-4" ng-click="">Hint</button>
+    </div>
   </div>
   <div class="row">
     <div class="col-md-offset-1 col-md-10 challenge-containers" id="test-results">

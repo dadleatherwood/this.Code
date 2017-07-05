@@ -11,6 +11,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(express.static(__dirname + "/public"))
 
+
 massive('postgres://localhost:5432/this_code')
   .then(db => {
     app.set('db', db)

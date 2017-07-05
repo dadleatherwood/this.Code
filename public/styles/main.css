@@ -137,13 +137,11 @@
   height: 100px;
   border: 1px solid #797979;
 }
-
-.hint-btn {
-  background-color: #109AF7!important;
-  border: none!important;
+.challenge-buttons {
   display: flex;
-  justify-content: space-around;
+  justify-content:space-around;
 }
+
 
 #test-result {
   margin: 2px;
