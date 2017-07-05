@@ -19,6 +19,25 @@
 #code {
   color: #4CAF50;
 }
+
+/*splash*/
+.jumbotron {
+  display: flex;
+  justify-content: center;
+  background-image: url("public/assets/images/trees.jpeg")no-repeat center center;
+  height: 50vh;
+}
+
+.intro-container {
+  margin: auto 0;
+}
+
+/*login page*/
+.login-page {
+  height: 100vh;
+
+}
+
 /*login forms*/
 
 .profile-login-forms {
@@ -53,6 +72,9 @@
 
 
 /*challenge splash*/
+.challenge-splash {
+  height: 100vh;
+}
 .challenge-menu-btn {
   background-color: #4CAF50;
   font-weight: bold;
@@ -68,6 +90,7 @@
   display: flex;
   justify-content: space-around;
   border: 1px solid black;
+  background-color: #109AF7;
   }
 
 /*challenge individual*/
