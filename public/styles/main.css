@@ -16,15 +16,42 @@
 }
 
 #code {
-  color: #7AC70C;
+  color: #FFA639;
 }
 /*login forms*/
+
+.profile-row {
+}
+
+.profile-login-forms {
+  margin-top: 2em;
+  max-width: 475px;
+}
+
+.panel-heading {
+  font-family: 'Droid Serif', serif;
+  font-size: 32px;
+  text-align: center;
+  background-color: #FFA639!important;
+  color:#797979!important;
+}
+
+.form-control {
+  margin: 1em 0;
+}
+
+#profile-login-btn {
+  font-family: 'Droid Serif', serif;
+  background-color: #FFA639!important;
+  width: 100%;
+}
+
 
 
 /*challenge splash*/
 .challenge-menu-btn {
   margin: 3em;
-  background-color: #3EBBF7;
+  background-color: #CEE7B8;
   font-family: 'Droid Serif', serif;
   font-weight: bold;
   font-size: 50px;

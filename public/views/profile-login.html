@@ -1,30 +1,35 @@
 <div class="container-fluid">
-  <div class="container-fluid sign-up panel panel-info">
-    <div class="panel-heading">this.Code ( ) Sign Up</div>
-    <div class="panel-body">
-      <form>
-        <input type="text" class="form-control" ng-model="user.first_name" placeholder="First Name" />
-        <input type="text" class="form-control" ng-model="user.last_name" placeholder="Last Name" />
-        <input type="text" class="form-control" ng-model="user.username" placeholder="Username" />
-        <input type="text" class="form-control" ng-model="user.email" placeholder="Email" />
-        <input type="password" class="form-control" ng-model="user.password" placeholder="Password" />
-        <input type="password" class="form-control" ng-model="user.confirmPassword" placeholder="Confirm Password" />
-        <button type="button" class="btn btn-info" id="sign-up-btn" ng-click="createUser(user)">Sign Up</button>
-        <div>{{createError}}</div>
-      </form>
-
+  <div class="profile-row">
+    <div class="col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-5 profile-login-forms">
+      <div class="panel panel-success">
+        <div class="panel-heading">Sign Up</div>
+        <div class="panel-body">
+          <form>
+            <input type="text" class="form-control" ng-model="user.first_name" placeholder="First Name" />
+            <input type="text" class="form-control" ng-model="user.last_name" placeholder="Last Name" />
+            <input type="text" class="form-control" ng-model="user.username" placeholder="Username" />
+            <input type="text" class="form-control" ng-model="user.email" placeholder="Email" />
+            <input type="password" class="form-control" ng-model="user.password" placeholder="Password" />
+            <input type="password" class="form-control" ng-model="user.confirmPassword" placeholder="Confirm Password" />
+            <button type="button" class="btn" id="profile-login-btn" ng-click="createUser(user)">Sign Up</button>
+            <div>{{createError}}</div>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="container-fluid login panel panel-info">
-    <div class="panel-heading">this.Code ( ) Login</div>
-    <div class="panel-body">
-      <form>
-        <input type="text" class="form-control" ng-model="returningUser.username" placeholder="Username or Email" />
-        <input type="password" class="form-control" ng-model="returningUser.password" placeholder="Password" />
-        <button type="button" class="btn btn-info" id="login-btn" ng-click="loginUser(returningUser)">Login</button>
-        <div>{{loginError}}</div>
-      </form>
+    <div class="col-md-5 col-lg-5 profile-login-forms">
+      <div class="panel panel-success">
+        <div class="panel-heading">Login</div>
+        <div class="panel-body">
+          <form>
+            <input type="text" class="form-control" ng-model="returningUser.username" placeholder="Username or Email" />
+            <input type="password" class="form-control" ng-model="returningUser.password" placeholder="Password" />
+            <button type="button" class="btn" id="profile-login-btn" ng-click="loginUser(returningUser)">Login</button>
+            <div>{{loginError}}</div>
+          </form>
 
+        </div>
+      </div>
     </div>
   </div>
 </div>

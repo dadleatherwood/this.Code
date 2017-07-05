@@ -1,24 +1,22 @@
 <div class="container-fluid">
   <div class="row">
-    <button type="button" class="btn challenge-menu-btn col-md-3 justify-content-center" ng-click="doSomething()">Beginner</button>
-    <button type="button" class="btn challenge-menu-btn col-md-3 justify-content-center" ng-click="doSomething()">Intermediate</button>
-    <button type="button" class="btn challenge-menu-btn col-md-3 justify-content-center" ng-click="doSomething()">Master</button>
+    <button type="button" class="btn challenge-menu-btn col-xs-12 col-md-offset-1 col-md-3  justify-content-center" ng-click="doSomething()">Beginner</button>
+    <button type="button" class="btn challenge-menu-btn col-xs-12 col-md-3 justify-content-center" ng-click="doSomething()">Intermediate</button>
+    <button type="button" class="btn challenge-menu-btn col-xs-12 col-md-3 justify-content-center" ng-click="doSomething()">Master</button>
   </div>
   <div class="row">
     <div class="col-md-12 challenge-list-container" ng-repeat="challenge in challenges.beginner">
-    <h2 ui-sref="challenge({id:challenge.id})">{{challenge.name}}</h2>
-
+      <h2 ui-sref="challenge({id:challenge.id})">{{challenge.name}}</h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12 challenge-list-container">
-
+    <div class="col-md-12 challenge-list-container" ng-repeat="challenge in challenges.intermediate">
+      <h2 ui-sref="challenge({id:challenge.id})">{{challenge.name}}</h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12 challenge-list-container">
-
+    <div class="col-md-12 challenge-list-container" ng-repeat="challenge in challenges.master">
+      <h2 ui-sref="challenge({id:challenge.id})">{{challenge.name}}</h2>
     </div>
   </div>
-
 </div>

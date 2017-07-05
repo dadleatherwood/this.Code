@@ -1,10 +1,12 @@
 <div class="container-fluid">
   <div class="row">
+    <label>Challenge</label>
     <div class="col-md-10 challenge-containers">
       {{challenge.description}}
     </div>
   </div>
   <div class="row">
+    <label>Sample Test Cases</label>
     <div class="col-md-10 challenge-containers">
       SAMPLE TEST
     </div>
@@ -23,7 +25,10 @@
   <div class="row">
     <button type="button" class="btn btn-success hint-btn col-md-5" ng-click="testCode(code)">Run</button>
   </div>
-  <div class="row" ng-repeat="test in tests">
+  <div class="row challenge-containers" >
+    <div class="col-md-10" ng-repeat="test in tests">
+      {{test.result}}
+    </div>
     {{test.result}}
     <!-- Make Pretty, possbily change text to green when passed, red when failed -->
   </div>
