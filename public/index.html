@@ -24,36 +24,9 @@
 
 <body ng-controller="myAppCtrl">
 
-  <!-- nav bar -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <!-- brand and toggle when mobile -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" id="brand" ui-sref="home">this.<span id="code">Code( )</span></a>
-      </div>
-      <!-- links -->
-      <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a ui-sref="challenges">Challenges <span class="sr-only">(current)</span></a></li>
-          <li class="dropdown">
-            <a ui-sref="login" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Social <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a ui-sref="login">LeaderBoard</a></li>
-              <li><a ui-sref="login">Discussion</a></li>
-            </ul>
-          </li>
-          <li>
-            <li><a ui-sref="login">Profile</a></li>
-          </li>
-        </ul>
-    </div>
-  </nav>
+  <!-- navbar directive -->
+  <navbar></navbar>
+
 
   <!-- main (ui content) -->
   <div class="ui-view">
@@ -77,6 +50,7 @@
   <script src="./js/controllers/loginCtrl.js"></script>
   <script src="./js/controllers/challengesCtrl.js"></script>
   <script src="./js/controllers/challengeCtrl.js"></script>
+  <script src="./js/directives/navbar.js"></script>
 
 
 </body>
