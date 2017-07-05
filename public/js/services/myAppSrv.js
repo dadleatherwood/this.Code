@@ -26,12 +26,10 @@ angular.module('myApp').service('myAppSrv',function($http){
           groupedResults.master.push(result.data[i])
         }
       }
-      console.log(groupedResults)
       return groupedResults
     })
   }
   this.getChallengeById = function(id){
-    console.log(id)
     return $http.get('/api/challenge/' + id).then(result => {
       return result.data
     })
@@ -47,9 +45,9 @@ angular.module('myApp').service('myAppSrv',function($http){
       for (var test of result.data) {
         var answer = func(test.test_input)
         if (answer === test.test_output) {
-          test.result = "Passed"
+          test.result = "expected " + test.test_output + "; received " + answer + " --- Passed Test"
         } else {
-          test.result = "Failed, expected " + test.test_output + "; received " + answer
+          test.result = "expected " + test.test_output + "; received " + answer + " --- Failed Test"
         }
       }
       return result.data

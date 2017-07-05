@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Droid Serif', serif;
 }
 
 .ui-view {
@@ -16,12 +17,9 @@
 }
 
 #code {
-  color: #FFA639;
+  color: #4CAF50;
 }
 /*login forms*/
-
-.profile-row {
-}
 
 .profile-login-forms {
   margin-top: 2em;
@@ -29,11 +27,10 @@
 }
 
 .panel-heading {
-  font-family: 'Droid Serif', serif;
   font-size: 32px;
   text-align: center;
-  background-color: #FFA639!important;
-  color:#797979!important;
+  background-color: #4CAF50!important;
+
 }
 
 .form-control {
@@ -42,30 +39,51 @@
 
 #profile-login-btn {
   font-family: 'Droid Serif', serif;
-  background-color: #FFA639!important;
+  background-color: #4CAF50!important;
   width: 100%;
+  color: #3C763D!important;
+}
+
+.profile-login-error {
+  margin: 2em 0 0 2em;
+  color: #41A472;
+  font-weight: bold;
 }
 
 
 
 /*challenge splash*/
 .challenge-menu-btn {
-  margin: 3em;
-  background-color: #CEE7B8;
-  font-family: 'Droid Serif', serif;
+  background-color: #4CAF50;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 32px!important;
+  width: 100%;
+  margin-top: 1em;
 }
 
-.challenge-list-container {
-  margin: 3em;
+.challenge-list {
+  margin-top: 1em;
   text-align: center;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
   }
 
 /*challenge individual*/
 .challenge-containers {
   margin: 2em;
   height: 100px;
-  border: 2px solid #3EBBF7;
-  border-radius: 2em;
+  border: 1px solid #797979;
+}
+
+.hint-btn {
+  background-color: #109AF7!important;
+  border: none!important;
+  display: flex;
+  justify-content: space-around;
+}
+
+#test-result {
+  margin: 2px;
 }

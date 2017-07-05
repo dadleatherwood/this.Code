@@ -8,7 +8,7 @@ angular.module('myApp').controller('loginCtrl', function($scope, $state, myAppSr
       }
     })
     .catch(function(err) {
-      $scope.createError = "Sorry! There was a problem creating your account. Please try again."
+      $scope.createError = err.data.message
     })
   },
 

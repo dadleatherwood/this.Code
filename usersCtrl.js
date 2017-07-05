@@ -5,7 +5,12 @@ module.exports = {
     const {first_name, last_name, username, email, password} = req.body
     const inputs = [first_name, last_name, username, email, password]
     dbInstance.create_user(inputs).then(function(user){
-      res.send(user)
+      if (user.length) {
+        return res.status(200).json(user)
+      }
+        return res.status(401).json({message: "Sorry! There was a problem creating your account. Please try again."})
+    }).catch(function(err) {
+      console.log(err)
     })
   },
 
@@ -17,7 +22,7 @@ module.exports = {
       if (user.length) {
           return res.status(200).json(user)
       }
-      return res.status(401).json({message: "Incorrect login"})
+      return res.status(401).json({message: "Incorrect login, please try again."})
     }).catch(function(err) {
       console.log(err)
     })
