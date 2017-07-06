@@ -74,6 +74,9 @@
 
 
 /*challenge splash*/
+.jumbotron.challenge-jumbotron {
+  margin-bottom: 0;
+}
 .challenge-intro-container {
   max-width: 700px;
 }
@@ -97,21 +100,21 @@
 
 
   #beginner-challenges {
-    margin: 10px auto;
+    /*margin: 10px auto;*/
     padding: 20px;
     background-image: url("../assets/images/green background.jpg");
     background-size: cover;
   }
 
   #intermediate-challenges {
-    margin: 2em auto;
+    /*margin: 2em auto;*/
     padding: 20px;
     background-image: url("../assets/images/yellow background.jpg");
     background-size: cover;
   }
 
   #master-challenges {
-    margin: 10px auto;
+    /*margin: 10px auto;*/
     padding: 20px;
     background-image: url("../assets/images/red background.jpg");
     background-size: cover;
