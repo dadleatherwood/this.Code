@@ -95,20 +95,6 @@
   background-color: #F4F4F4;
   }
 
-  #beginner-btn {
-    background-image: url("../assets/images/green background.jpg");
-    background-size: cover;
-  }
-
-  #intermediate-btn {
-    background-image: url("../assets/images/yellow background.jpg");
-    background-size: cover;
-  }
-
-  #master-btn {
-    background-image: url("../assets/images/red background.jpg");
-    background-size: cover;
-  }
 
   #beginner-challenges {
     margin: 10px auto;
@@ -132,8 +118,8 @@
   }
 
 /*challenge individual*/
-.challenge-containers {
-  margin: 2em;
+.challenge-description {
+  margin: 2em auto;
   height: 100px;
   border: 1px solid #797979;
 }
