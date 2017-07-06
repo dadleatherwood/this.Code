@@ -6,13 +6,13 @@
         <h4 class="modal-title">{{modal.heading}}</h4>
       </div>
       <div class="modal-body">
-        <ul ng-repeat="failure in failures">
+        <ul ng-repeat="failure in failures track by $index">
           <li id="test-result">{{failure}}</li>
         </ul>
         <p>{{modal.message}}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        <button type="button" ng-class="modal.type" class="btn btn-success challenge-btn" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

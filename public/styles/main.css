@@ -151,7 +151,21 @@
 }
 
 .modal-header.challenge-modal-header.error {
-  background: red;
+  background-color: #C9302C;
+}
+
+.modal-header.challenge-modal-header.failure {
+  background-color: #C9302C;
+}
+
+.btn.btn-success.challenge-btn.error {
+  background-color: #C9302C;
+  border-color: #C9302C;
+}
+
+.btn.btn-success.challenge-btn.failure {
+  background-color: #C9302C;
+  border-color: #C9302C;
 }
 
 #test-result {
