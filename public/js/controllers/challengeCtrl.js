@@ -8,12 +8,32 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
       eval(code.code)
       code.challenge_id = $stateParams.id
       myAppSrv.testCode(code).then(function(response){
-        $scope.tests = response
+        $scope.failures = response
+        if (response.length) {
+          $scope.modal = {
+            heading: 'Test Results',
+            type: 'failure',
+            message: '',
+          }
+        } else {
+          $scope.modal = {
+            heading: 'Congratulations!',
+            type: 'success',
+            message: 'You passed all the tests!'
+          }
+        }
+        $('#challengeModal').modal()
       })
     } catch (err){
-      $scope.errorMessage = err.message
-      // need to put on front-end still
+      $scope.modal = {
+        heading: 'Syntax Error',
+        type: 'error',
+        message: err.message,
+      },
+      $scope.failures = []
+      $('#challengeModal').modal()
     }
   }
   $scope.getChallengeById()
+  // do I need to put the test inputs/outputs here to be able to show tests to users?
 })

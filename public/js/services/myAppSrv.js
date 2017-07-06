@@ -37,21 +37,25 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   }
   this.testCode = function(code){
     return $http.post('/api/test', code).then(result => {
-      var func = eval(`(function outer() {return ${code.code}})()`)
-      if (typeof func !== 'function') {
+      try {
 
-      } else {
-
-      }
-      for (var test of result.data) {
-        var answer = func.apply(null, test.test_inputs)
-        if (answer === test.test_outputs) {
-          test.result = "expected " + test.test_outputs + "; received " + answer + " --- Passed Test"
+        var func = eval(`(function outer() {return ${code.code}})()`)
+        console.log(typeof func === 'function')
+        if (typeof func === 'function') {
+          var failures = []
+          for (var test of result.data) {
+            var answer = func.apply(null, test.test_inputs)
+            if (answer !== test.test_outputs) {
+              failures.push("expected " + test.test_outputs + "; received " + answer + " --- Failed Test")
+            }
+          }
+          return failures
         } else {
-          test.result = "expected " + test.test_outputs + "; received " + answer + " --- Failed Test"
+          return ["Please write a function declaration"]
         }
+      } catch (err) {
+        return [err.message]
       }
-      return result.data
     })
   }
 })

@@ -1,12 +1,15 @@
 <div class="container-fluid">
   <div class="row">
+    <!-- How can I add labels above each box?   -->
     <div class="col-md-offset-1 col-md-10 challenge-containers">
       {{challenge.description}}
     </div>
   </div>
   <div class="row">
     <div class="col-md-offset-1 col-md-10 challenge-containers" id="tests">
-      {{test}}
+      <p>
+        Expecting {{test.test_outputs}} when {{test.test_inputs}} is given as paramaters.
+      </p>
     </div>
   </div>
   <div class="row">
@@ -23,16 +26,13 @@
     <div class="col-xs-12 col-md-4">
       <button type="button" class="btn btn-danger hint-btn col-xs-12 col-md-offset-4 col-md-4" ng-click="">Hint</button>
     </div>
+    <!-- alert hint when clicked -->
   </div>
-  <div class="row">
-    <div class="col-md-offset-1 col-md-10 challenge-containers" id="test-results">
-      <ul ng-repeat="test in tests">
-        <li id="test-result">{{test.result}}</li>
-      </ul>
+  <!-- alert test results with funny meme when successful, and then have option to go the next challenge/previous challenge -->
 
-      <!-- where to write if statment to show errorMessage -->
-      <!-- {{errorMessage}} -->
+  <modal modal="modal" failures="failures"></modal>
+      <!-- how can I track which challenges are complete, and change the way they look if completed by the user?   -->
     </div>
-  </div>
+
 
 </div>
