@@ -30,6 +30,7 @@ app.post('/api/login', usersCtrl.loginUser)
 app.get('/api/challenges',challengesCtrl.getChallenges)
 app.get('/api/challenge/:id', challengesCtrl.getChallengeById)
 app.post('/api/test',challengesCtrl.testCode)
+app.get('/api/hint/:id', challengesCtrl.getHintInfo)
 
 
 app.listen(3000, function(){

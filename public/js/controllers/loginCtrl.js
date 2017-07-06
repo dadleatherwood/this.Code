@@ -2,7 +2,6 @@ angular.module('myApp').controller('loginCtrl', function($scope, $state, myAppSr
   $scope.createUser = function(user){
     myAppSrv.createUser(user)
     .then(function(response){
-      console.log(response)
       if (response.status === 200) {
         $state.go('challenges')
       }
@@ -20,7 +19,6 @@ angular.module('myApp').controller('loginCtrl', function($scope, $state, myAppSr
       }
     })
     .catch(function(err) {
-      console.log(err)
       $scope.loginError = err.data.message
     })
   }

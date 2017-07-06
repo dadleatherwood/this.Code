@@ -58,4 +58,9 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
       }
     })
   }
+
+  this.getHintInfo = function(id){
+    return $http.get('/api/hint/' + id.id)
+    .then(result => {return result})
+  }
 })
