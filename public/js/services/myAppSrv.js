@@ -44,11 +44,11 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
       }
       for (var test of result.data) {
-        var answer = func(test.test_input)
-        if (answer === test.test_output) {
-          test.result = "expected " + test.test_output + "; received " + answer + " --- Passed Test"
+        var answer = func.apply(null, test.test_inputs)
+        if (answer === test.test_outputs) {
+          test.result = "expected " + test.test_outputs + "; received " + answer + " --- Passed Test"
         } else {
-          test.result = "expected " + test.test_output + "; received " + answer + " --- Failed Test"
+          test.result = "expected " + test.test_outputs + "; received " + answer + " --- Failed Test"
         }
       }
       return result.data
