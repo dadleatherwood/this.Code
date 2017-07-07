@@ -1,4 +1,11 @@
 angular.module('myApp').controller('challengeCtrl', function($scope, $state, myAppSrv, $stateParams){
+  myAppSrv.createUserChallenge($stateParams.id, false)
+  .then(function(response) {
+    console.log(response)
+  })
+  .catch(function(err) {
+    console.error(err)
+  })
   $scope.getChallengeById = function () {
     myAppSrv.getChallengeById($stateParams.id).then(function(response) { $scope.challenge = response[0]
     })
@@ -16,14 +23,19 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
             type: 'failure',
             message: '',
           }
+          $('#challengeModal').modal()
         } else {
-          $scope.modal = {
-            heading: 'Congratulations!',
-            type: 'success',
-            message: 'You passed all the tests!'
-          }
+          myAppSrv.updateUserChallenge($stateParams.id, true)
+          .then(function(){
+            console.log("I'm working")
+            $scope.modal = {
+              heading: 'Congratulations!',
+              type: 'success',
+              message: 'You passed all the tests!'
+            }
+            $('#challengeModal').modal()
+          })
         }
-        $('#challengeModal').modal()
       })
     } catch (err){
       $scope.modal = {

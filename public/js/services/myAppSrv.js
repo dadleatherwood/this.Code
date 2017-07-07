@@ -1,8 +1,9 @@
 angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   var self = this
-  this.user = {}
+  // Remove guest id later
+  this.user = {id: 11}
 
-  
+
   this.createUser = function(user){
     return $http.post('/api/users', user).then(result => {
       self.user = result.data
@@ -32,6 +33,7 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
           groupedResults.master.push(result.data[i])
         }
       }
+      console.log("After Grouping: ", groupedResults)
       return groupedResults
     })
   }
@@ -71,5 +73,13 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   this.getHintInfo = function(id){
     return $http.get('/api/hint/' + id.id)
     .then(result => {return result})
+  }
+
+  this.createUserChallenge = function(challengeId){
+    return $http.post('/api/user/challenge/', {challenge_id: challengeId, user_id: self.user.id})
+  }
+
+  this.updateUserChallenge = function(challengeId){
+    return $http.put('/api/user/challenge/', {challenge_id: challengeId, user_id: self.user.id, completed: true})
   }
 })

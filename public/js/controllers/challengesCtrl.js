@@ -3,6 +3,7 @@ angular.module('myApp').controller('challengesCtrl', function($scope, $state, my
     myAppSrv.getChallenges()
     .then(response => {
       $scope.challenges = response
+      return response
     })
   }
 
