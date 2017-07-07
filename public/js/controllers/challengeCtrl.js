@@ -7,7 +7,8 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
     try {
       eval(code.code)
       code.challenge_id = $stateParams.id
-      myAppSrv.testCode(code).then(function(response){
+      myAppSrv.testCode(code)
+      .then(function(response){
         $scope.failures = response
         if (response.length) {
           $scope.modal = {
@@ -35,7 +36,8 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
     }
   }
   $scope.showHint = function(id){
-    myAppSrv.getHintInfo(id).then(function(response){
+    myAppSrv.getHintInfo(id)
+    .then(function(response){
       $scope.hintMessage = response
       $scope.modal = {
         heading: 'Hint',

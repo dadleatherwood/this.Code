@@ -1,12 +1,16 @@
 angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   var self = this
   this.user = {}
+
+  
   this.createUser = function(user){
     return $http.post('/api/users', user).then(result => {
       self.user = result.data
       return result
     })
   }
+
+
   this.loginUser = function(user){
     return $http.post('/api/login', user).then(result => {
       $rootScope.$emit('loggedIn', null)
@@ -14,9 +18,10 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
       return result
     })
   }
+
+
   this.getChallenges = function(challenges){
     return $http.get('/api/challenges').then(result => {
-      console.log(result.data)
       var groupedResults = {beginner: [], intermediate: [], master: []}
       for (var i = 0; i < result.data.length;i++){
         if(result.data[i].difficulty === 'beginner') {
@@ -30,17 +35,20 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
       return groupedResults
     })
   }
+
+
   this.getChallengeById = function(id){
     return $http.get('/api/challenge/' + id).then(result => {
       return result.data
     })
   }
+
+
   this.testCode = function(code){
     return $http.post('/api/test', code).then(result => {
       try {
 
         var func = eval(`(function outer() {return ${code.code}})()`)
-        console.log(typeof func === 'function')
         if (typeof func === 'function') {
           var failures = []
           for (var test of result.data) {
@@ -58,6 +66,7 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
       }
     })
   }
+
 
   this.getHintInfo = function(id){
     return $http.get('/api/hint/' + id.id)
