@@ -5,13 +5,13 @@
       <p>
         Time to have some fun.  Here you will find challenges that are designed to push your coding limits, and we hope you have fun while learning.
       </p>
-      <button class="btn btn-success btn-lg" ui-sref="#beginner-challenges">Beginner</button>
-      <button class="btn btn-success btn-lg" ui-sref="#intermediate-challenges">Intermediate</button>
-      <button class="btn btn-success btn-lg" ui-sref="#master-challenges">Master</button>
+      <button class="btn btn-success btn-lg" href="#beginner-challenges">Beginner</button>
+      <button class="btn btn-success btn-lg" href="#intermediate-challenges">Intermediate</button>
+      <button class="btn btn-success btn-lg" href="#master-challenges">Master</button>
     </div>
   </div>
   <div class="row" id="beginner-challenges">
-    <div class="col-md-offset-2 col-md-8 challenge-list"  ng-repeat="challenge in challenges.beginner">
+    <div class="col-md-offset-2 col-md-8 challenge-list"  ng-repeat="challenge in challenges.beginner" ng-class="{completed : challenge.completed, unattempted: challenge.completed == null, incomplete: challenge.completed == false}">
       <div>
         <h2 ui-sref="challenge({id:challenge.id})"> {{challenge.name}}</h2>
       </div>
@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="row" id="intermediate-challenges">
-    <div class="col-md-offset-2 col-md-8 challenge-list" ng-repeat="challenge in challenges.intermediate">
+    <div class="col-md-offset-2 col-md-8 challenge-list" ng-repeat="challenge in challenges.intermediate" ng-class="{completed : challenge.completed, unattempted: challenge.completed == null, incomplete: challenge.completed == false}">
       <div>
         <h2 ui-sref="challenge({id:challenge.id})">{{challenge.name}}</h2>
       </div>
@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="row" id="master-challenges">
-    <div class="col-md-offset-2 col-md-8 challenge-list" ng-repeat="challenge in challenges.master">
+    <div class="col-md-offset-2 col-md-8 challenge-list" ng-repeat="challenge in challenges.master" ng-class="{completed : challenge.completed, unattempted: challenge.completed == null, incomplete: challenge.completed == false}">
       <div>
         <h2 ui-sref="challenge({id:challenge.id})">{{challenge.name}}</h2>
       </div>

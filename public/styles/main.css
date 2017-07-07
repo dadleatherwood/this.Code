@@ -10,6 +10,7 @@
 }
 
 /*navbar*/
+
 #brand {
   font-size: 32px;
   font-family: 'Droid Serif', serif;
@@ -97,6 +98,18 @@
   border: 1px solid black;
   background-color: #F4F4F4;
   }
+/*WORKING HERE!!!*/
+  .challenge-list.completed {
+    background-color: #73E27C;
+  }
+
+  .challenge-list.incomplete {
+    background-color: #C5EACE;
+  }
+
+  .challenge-list.unattempted {
+    background-color: #EDF5E0;
+  }
 
 
   #beginner-challenges {
@@ -147,6 +160,10 @@
   background-color: #C9302C;
 }
 
+.modal-header.challenge-modal-header.hint {
+  background-color: #31B0D5;
+}
+
 .btn.btn-success.challenge-btn.error {
   background-color: #C9302C;
   border-color: #C9302C;
@@ -155,6 +172,11 @@
 .btn.btn-success.challenge-btn.failure {
   background-color: #C9302C;
   border-color: #C9302C;
+}
+
+.btn.btn-success.challenge-btn.hint {
+  background-color: #31B0D5;
+  border-color: #31B0D5;
 }
 
 #test-result {

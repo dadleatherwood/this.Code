@@ -2,7 +2,7 @@ module.exports = {
 
   getChallenges : (req, res, next) => {
     const dbInstance = req.app.get('db')
-    dbInstance.read_challenges()
+    dbInstance.read_challenges(req.query.user_id)
     .then(challenges => {
       return res.status(200).json(challenges)
     })
@@ -25,7 +25,8 @@ module.exports = {
   },
 
   getHintInfo : (req, res, next) => {
-    req.app.get('db').read_challenge_hint(req.params.id)
+    const dbInstance = req.app.get('db')
+    dbInstance.read_challenge_hint(req.params.id)
     .then(hint => {
       return res.status(200).json(hint)
     })

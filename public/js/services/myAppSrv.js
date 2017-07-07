@@ -6,7 +6,9 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
   this.createUser = function(user){
     return $http.post('/api/users', user).then(result => {
-      self.user = result.data
+      $rootScope.$emit('loggedIn', null)
+      self.user = result.data[0]
+      console.log(self.user)
       return result
     })
   }
@@ -15,14 +17,15 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   this.loginUser = function(user){
     return $http.post('/api/login', user).then(result => {
       $rootScope.$emit('loggedIn', null)
-      self.user = result.data
+      self.user = result.data[0]
+      console.log(self.user)
       return result
     })
   }
 
 
   this.getChallenges = function(challenges){
-    return $http.get('/api/challenges').then(result => {
+    return $http.get('/api/challenges?user_id=' + self.user.id).then(result => {
       var groupedResults = {beginner: [], intermediate: [], master: []}
       for (var i = 0; i < result.data.length;i++){
         if(result.data[i].difficulty === 'beginner') {
@@ -33,7 +36,7 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
           groupedResults.master.push(result.data[i])
         }
       }
-      console.log("After Grouping: ", groupedResults)
+      console.log("After Grouping: ", groupedResults.beginner[0].completed)
       return groupedResults
     })
   }
@@ -49,7 +52,6 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   this.testCode = function(code){
     return $http.post('/api/test', code).then(result => {
       try {
-
         var func = eval(`(function outer() {return ${code.code}})()`)
         if (typeof func === 'function') {
           var failures = []

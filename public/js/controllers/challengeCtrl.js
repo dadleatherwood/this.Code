@@ -26,6 +26,7 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
           $('#challengeModal').modal()
         } else {
           myAppSrv.updateUserChallenge($stateParams.id, true)
+          // Is this line causing the error?
           .then(function(){
             console.log("I'm working")
             $scope.modal = {
@@ -47,6 +48,8 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
       $('#challengeModal').modal()
     }
   }
+
+
   $scope.showHint = function(id){
     myAppSrv.getHintInfo(id)
     .then(function(response){
@@ -58,9 +61,11 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
       }
       $('#challengeModal').modal()
     })
+  }
 
+  $scope.isCompleted = function(){
+    return true;
   }
 
   $scope.getChallengeById()
-  // do I need to put the test inputs/outputs here to be able to show tests to users?
 })
