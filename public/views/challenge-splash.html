@@ -5,9 +5,10 @@
       <p>
         Time to have some fun.  Here you will find challenges that are designed to push your coding limits, and we hope you have fun while learning.
       </p>
-      <button class="btn btn-success btn-lg" href="#beginner-challenges">Beginner</button>
-      <button class="btn btn-success btn-lg" href="#intermediate-challenges">Intermediate</button>
-      <button class="btn btn-success btn-lg" href="#master-challenges">Master</button>
+
+      <button class="btn btn-success btn-lg" ng-controller="scrollCtrl" ng-click="goToBeginner()">Beginner</button>
+      <button class="btn btn-success btn-lg" ng-controller="scrollCtrl" ng-click="goToIntermediate()">Intermediate</button>
+      <button class="btn btn-success btn-lg" ng-controller="scrollCtrl" ng-click="goToMaster()">Master</button>
     </div>
   </div>
   <div class="row" id="beginner-challenges">

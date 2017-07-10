@@ -18,17 +18,6 @@ function($scope, $state, myAppSrv){
 })
 
 
-// .run(['$anchorScroll', function($anchorScroll) {
-//   $anchorScroll.yOffset = 50;
-// }])
-//
-// .controller('challengeBtnCtrl', ['$anchorScroll', '$location', '$scope', function($anchorScroll, $location, $scope){
-//   $scope.gotoAnchor = function(x) {
-//     var newHash = 'anchor' + x;
-//     if($location.hash() !== newHash) {
-//       $location.hash('anchor' + x)
-//     } else {
-//       $anchorScroll()
-//     }
-//   }
-// }])
+.run(['$anchorScroll', function($anchorScroll) {
+  $anchorScroll.yOffset = 50;
+}])
