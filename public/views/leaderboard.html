@@ -6,11 +6,20 @@
     </p>
   </div>
 </div>
+
 <div class="jumbotron leaderboard-jumbotron">
   <div class="row">
-    <div class="col-md-offset-2 col-md-8 leaderboard" ng-repeat:"user in users">
-      {{user.username}}
-      <h1>Hey</h1>
+    <div class="col-md-offset-2 col-md-8 leader-container" ng-repeat="user in users">
+      <div>
+        {{user.imageurl}}
+      </div>
+      <div>
+        <h3>{{user.username}}</h3>
+      </div>
+      <div>
+        <h3>{{user.score}}</h3>
+      </div>
+
     </div>
   </div>
 </div>

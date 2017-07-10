@@ -29,6 +29,7 @@
   background-size: cover;
   height: 50vh;
   text-align: center;
+  margin: 0 auto;
 }
 
 .intro-container {
@@ -94,11 +95,11 @@
   text-align: center;
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   border: 1px solid black;
   background-color: #F4F4F4;
   }
-/*WORKING HERE!!!*/
+
   .challenge-list.completed {
     background-color: #73E27C;
   }
@@ -186,7 +187,15 @@
   font-size: 24px;
 }
 
+/*Leaderboard*/
 .jumbotron.leaderboard-jumbotron {
-  height: 150px;
-  background-color: yellow;
+  background-color: grey;
+  background-image: none;
+  margin: 0 auto;
+}
+
+.leader-container {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
 }

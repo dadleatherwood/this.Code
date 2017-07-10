@@ -85,9 +85,10 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   }
 
   this.getUsers = function(){
-    return $http.get('/api/users/')
+    return $http.get('/api/users')
     .then(result => {
-      return result
+      console.log(result.data)
+      return result.data
     })
   }
 })
