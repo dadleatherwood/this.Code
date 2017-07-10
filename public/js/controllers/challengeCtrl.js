@@ -26,7 +26,6 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
           $('#challengeModal').modal()
         } else {
           myAppSrv.updateUserChallenge($stateParams.id, true)
-          // Is this line causing the error?
           .then(function(){
             console.log("I'm working")
             $scope.modal = {

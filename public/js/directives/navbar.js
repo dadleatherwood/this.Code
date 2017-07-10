@@ -10,7 +10,6 @@ angular.module('myApp').directive('navbar', function(){
         $scope.loggedIn = true
       })
       $transitions.onBefore( { to: 'login' }, function(trans) {
-        console.log("Moving to login")
         $scope.loggingIn = true
       });
 
@@ -19,6 +18,12 @@ angular.module('myApp').directive('navbar', function(){
           return true
         }
         return false
+      }
+
+      $scope.signOut = function() {
+        $scope.loggedIn = false;
+        $scope.user = {}
+        myAppSrv.user = {}
       }
 
     }

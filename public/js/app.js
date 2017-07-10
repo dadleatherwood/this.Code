@@ -30,5 +30,10 @@ angular.module('myApp',['ui.router'])
       controller: 'challengeCtrl'
     })
 
+    .state('leaderboard', {
+      url: '/leaderboard',
+      templateUrl: './views/leaderboard.html'
+    })
+
 
 })

@@ -1,14 +1,13 @@
 angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   var self = this
   // Remove guest id later
-  this.user = {id: 11}
+  this.user = {}
 
 
   this.createUser = function(user){
     return $http.post('/api/users', user).then(result => {
       $rootScope.$emit('loggedIn', null)
       self.user = result.data[0]
-      console.log(self.user)
       return result
     })
   }
@@ -18,7 +17,6 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
     return $http.post('/api/login', user).then(result => {
       $rootScope.$emit('loggedIn', null)
       self.user = result.data[0]
-      console.log(self.user)
       return result
     })
   }
@@ -36,7 +34,6 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
           groupedResults.master.push(result.data[i])
         }
       }
-      console.log("After Grouping: ", groupedResults.beginner[0].completed)
       return groupedResults
     })
   }
