@@ -7,7 +7,7 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
     console.error(err)
   })
 
-  
+
   $scope.getChallengeById = function () {
     myAppSrv.getChallengeById($stateParams.id).then(function(response) { $scope.challenge = response[0]
     })
@@ -31,7 +31,6 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
         } else {
           myAppSrv.updateUserChallenge($stateParams.id, true)
           .then(function(){
-            console.log("I'm working")
             $scope.modal = {
               heading: 'Congratulations!',
               type: 'success',

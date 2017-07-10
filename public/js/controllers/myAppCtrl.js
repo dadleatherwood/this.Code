@@ -8,10 +8,8 @@ function($scope, $state, myAppSrv){
     console.log(loggedIn);
     console.log(myAppSrv.user);
     if (myAppSrv.user.id) {
-      console.log("Working!!!")
       $state.go('challenges')
     } else {
-      console.log("Crap!")
       $state.go('login')
     }
   }
