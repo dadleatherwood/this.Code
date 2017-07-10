@@ -71,7 +71,9 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
   this.getHintInfo = function(id){
     return $http.get('/api/hint/' + id.id)
-    .then(result => {return result})
+    .then(result => {
+      return result
+    })
   }
 
   this.createUserChallenge = function(challengeId){
@@ -80,5 +82,12 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
   this.updateUserChallenge = function(challengeId){
     return $http.put('/api/user/challenge/', {challenge_id: challengeId, user_id: self.user.id, completed: true})
+  }
+
+  this.getUsers = function(){
+    return $http.get('/api/users/')
+    .then(result => {
+      return result
+    })
   }
 })

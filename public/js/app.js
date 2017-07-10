@@ -32,7 +32,9 @@ angular.module('myApp',['ui.router'])
 
     .state('leaderboard', {
       url: '/leaderboard',
-      templateUrl: './views/leaderboard.html'
+      templateUrl: './views/leaderboard.html',
+      controller: 'usersCtrl'
+
     })
 
 

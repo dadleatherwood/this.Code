@@ -1,3 +1,16 @@
 <div class="jumbotron">
-  
+  <div class="intro-container">
+    <h1>Leaderboard</h1>
+    <p>
+      Take a look below to find out how you compare to your coding peers.
+    </p>
+  </div>
+</div>
+<div class="jumbotron leaderboard-jumbotron">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8 leaderboard" ng-repeat:"user in users">
+      {{user.username}}
+      <h1>Hey</h1>
+    </div>
+  </div>
 </div>

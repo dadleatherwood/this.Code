@@ -34,6 +34,7 @@ app.post('/api/test',challengesCtrl.testCode)
 app.get('/api/hint/:id', challengesCtrl.getHintInfo)
 app.post('/api/user/challenge', challengesCtrl.createUserChallenge)
 app.put('/api/user/challenge', challengesCtrl.updateUserChallenge)
+app.get('/api/users', usersCtrl.getUsers)
 
 
 app.listen(3000, function(){

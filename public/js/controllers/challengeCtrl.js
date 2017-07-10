@@ -6,10 +6,14 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
   .catch(function(err) {
     console.error(err)
   })
+
+  
   $scope.getChallengeById = function () {
     myAppSrv.getChallengeById($stateParams.id).then(function(response) { $scope.challenge = response[0]
     })
   }
+
+
   $scope.testCode = function(code) {
     try {
       eval(code.code)
@@ -62,9 +66,11 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
     })
   }
 
+
   $scope.isCompleted = function(){
     return true;
   }
+
 
   $scope.getChallengeById()
 })

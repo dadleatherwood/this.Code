@@ -4,7 +4,6 @@ angular.module('myApp').controller('challengesCtrl', function($scope, $state, my
     .then(response => {
       $scope.challenges = response
       return response
-      console.log(response)
     })
   }
 
