@@ -26,6 +26,7 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
             heading: 'Test Results',
             type: 'failure',
             message: '',
+            button: 'Try Again'
           }
           $('#challengeModal').modal()
         } else {
@@ -34,7 +35,8 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
             $scope.modal = {
               heading: 'Congratulations!',
               type: 'success',
-              message: 'You passed all the tests!'
+              message: 'You passed all the tests!',
+              button: 'Next Challenge'
             }
             $('#challengeModal').modal()
           })
@@ -45,6 +47,7 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
         heading: 'Syntax Error',
         type: 'error',
         message: err.message,
+        button: "Try Again"
       },
       $scope.failures = []
       $('#challengeModal').modal()
@@ -59,7 +62,8 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
       $scope.modal = {
         heading: 'Hint',
         type: 'hint',
-        message: response.data[0].hint
+        message: response.data[0].hint,
+        button: 'Close'
       }
       $('#challengeModal').modal()
     })
