@@ -6,8 +6,13 @@ angular.module('myApp').directive('modal', function(){
       modal: '=',
       failures: '='
     },
-    controller: function($scope){
-
+    controller: function($scope, $state, $timeout){
+      $scope.changeView = function() {
+        $('#challengeModal').modal('hide')
+        $timeout(function() {
+          $state.go("challenge", {id: $scope.modal.nextChallengeId})
+        }, 200)
+      }
     }
   }
 })

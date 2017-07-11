@@ -12,7 +12,8 @@
         <p>{{modal.message}}</p>
       </div>
       <div class="modal-footer">
-        <button type="button" ng-class="modal.type" class="btn btn-success challenge-btn" data-dismiss="modal">{{modal.button}}</button>
+        <button ng-if="modal.type !== 'success'"type="button" ng-class="modal.type" class="btn btn-success challenge-btn" data-dismiss="modal">{{modal.button}}</button>
+        <button ng-if="modal.type === 'success'" type="button" ng-class="modal.type" class="btn btn-success challenge-btn" ng-click="changeView()">{{modal.button}}</button>
       </div>
     </div>
   </div>

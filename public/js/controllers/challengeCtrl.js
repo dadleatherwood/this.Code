@@ -1,7 +1,6 @@
 angular.module('myApp').controller('challengeCtrl', function($scope, $state, myAppSrv, $stateParams){
   myAppSrv.createUserChallenge($stateParams.id, false)
   .then(function(response) {
-    console.log(response)
   })
   .catch(function(err) {
     console.error(err)
@@ -26,7 +25,7 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
             heading: 'Test Results',
             type: 'failure',
             message: '',
-            button: 'Try Again'
+            button: 'Try Again',
           }
           $('#challengeModal').modal()
         } else {
@@ -36,7 +35,8 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
               heading: 'Congratulations!',
               type: 'success',
               message: 'You passed all the tests!',
-              button: 'Next Challenge'
+              button: 'Next Challenge',
+              nextChallengeId: ++code.challenge_id
             }
             $('#challengeModal').modal()
           })
