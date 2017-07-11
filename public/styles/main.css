@@ -35,13 +35,41 @@
   justify-content: center;
   background-image: url("../assets/images/oXAZlPv.png");
   background-size: cover;
-  height: 50vh;
+  height: 60vh;
   text-align: center;
-  margin: 0 auto;
+  margin-bottom: 0;
+}
+
+.jumbotron.main-splash {
+  margin-bottom: 0;
 }
 
 .intro-container {
   margin: auto 0;
+}
+
+.about-section-row {
+  width: 100%;
+  margin: 0 auto;
+  height: 50vh;
+  background-color: #E9EAEA;
+  margin-top: 0px;
+}
+
+.about-sections {
+  height: 45vh;
+  margin-top: 2%;
+  text-align: center;
+}
+
+#section-1 {
+  border-right: 3px solid #C9CACB;
+}
+
+
+
+#section-3 {
+  border-left: 3px solid #C9CACB;
 }
 
 /*login page*/
@@ -89,6 +117,7 @@
 }
 .challenge-intro-container {
   max-width: 700px;
+  margin: auto 0;
 }
 .challenge-menu-btn {
   background-color: #4CAF50;

@@ -8,6 +8,7 @@ module.exports = {
     })
   },
 
+
   getChallengeById : (req, res, next) => {
     const dbInstance = req.app.get('db')
     dbInstance.read_challenge(req.params.id)
@@ -15,6 +16,7 @@ module.exports = {
       return res.status(200).json(challenge)
     })
   },
+
 
   testCode : (req, res, next) => {
     const dbInstance = req.app.get('db')
@@ -24,6 +26,7 @@ module.exports = {
     })
   },
 
+
   getHintInfo : (req, res, next) => {
     const dbInstance = req.app.get('db')
     dbInstance.read_challenge_hint(req.params.id)
@@ -32,6 +35,7 @@ module.exports = {
     })
     .catch(err => res.status(500).json(err))
   },
+
 
   createUserChallenge: (req, res, next) => {
     const db = req.app.get('db')
@@ -48,12 +52,54 @@ module.exports = {
     .catch(err => res.status(500).json(err))
   },
 
+
   updateUserChallenge: (req, res, next) => {
     req.app.get('db').update_user_challenge([req.body.challenge_id, req.body.user_id, req.body.completed])
     .then(result => {
+      if (result.length) {
+        return req.app.get('db').update_user_score([req.body.value, req.body.user_id])
+      }
+      return result
+    })
+    .then(result => {
       return res.status(200).json(result)
     })
-    .catch(err => res.status(500).json(err))
+    .catch(err => {
+      console.log(err)
+      res.status(500).json(err)
+    })
+  },
+
+
+  getDaysInCode: (req, res, next) => {
+    const db = req.app.get('db')
+    db.read_user_days(req.params.id)
+    .then(result => {
+      console.log(result[0].update_days)
+      if (result[0].greater_than_24 && result[0].less_than_48) {
+        db.update_user_days(req.params.id)
+        .then(result => {
+          return res.status(200).json(result)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      } else if (!result[0].less_than_48) {
+        db.reset_user_days(req.params.id)
+        .then(result => {
+          return res.status(200).json(result)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      } else {
+        return res.status(200).json(result)
+      }
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json(err)
+    })
   }
 
 }

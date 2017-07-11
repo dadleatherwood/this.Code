@@ -5,7 +5,8 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
 
   this.createUser = function(user){
-    return $http.post('/api/users', user).then(result => {
+    return $http.post('/api/users', user)
+    .then(result => {
       $rootScope.$emit('loggedIn', result.data[0])
       self.user = result.data[0]
       return result
@@ -14,7 +15,8 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
 
   this.loginUser = function(user){
-    return $http.post('/api/login', user).then(result => {
+    return $http.post('/api/login', user)
+    .then(result => {
       $rootScope.$emit('loggedIn', result.data[0])
       self.user = result.data[0]
       return result
@@ -23,7 +25,8 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
 
   this.getChallenges = function(challenges){
-    return $http.get('/api/challenges?user_id=' + self.user.id).then(result => {
+    return $http.get('/api/challenges?user_id=' + self.user.id)
+    .then(result => {
       var groupedResults = {beginner: [], intermediate: [], master: []}
       for (var i = 0; i < result.data.length;i++){
         if(result.data[i].difficulty === 'beginner') {
@@ -40,14 +43,16 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
 
   this.getChallengeById = function(id){
-    return $http.get('/api/challenge/' + id).then(result => {
+    return $http.get('/api/challenge/' + id)
+    .then(result => {
       return result.data
     })
   }
 
 
   this.testCode = function(code){
-    return $http.post('/api/test', code).then(result => {
+    return $http.post('/api/test', code)
+    .then(result => {
       try {
         var func = eval(`(function outer() {return ${code.code}})()`)
         if (typeof func === 'function') {
@@ -76,19 +81,33 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
     })
   }
 
+
   this.createUserChallenge = function(challengeId){
     return $http.post('/api/user/challenge/', {challenge_id: challengeId, user_id: self.user.id})
   }
 
-  this.updateUserChallenge = function(challengeId){
-    return $http.put('/api/user/challenge/', {challenge_id: challengeId, user_id: self.user.id, completed: true})
+
+  this.updateUserChallenge = function(challengeId, challengeValue){
+    return $http.put('/api/user/challenge/', {challenge_id: challengeId, user_id: self.user.id, completed: true, value: challengeValue})
   }
 
+
   this.getUsers = function(){
-    return $http.get('/api/users')
+    return $http.get('/api/users/')
     .then(result => {
       return result.data
     })
   }
+
+
+  this.getDaysInCode = function(){
+    return $http.get('/api/user/days/' + this.user.id)
+    .then(result => {
+      $rootScope.$emit('daysOfCode', result.data[0].days_of_code)
+      return result.data[0]
+    })
+  }
+
+
 
 })

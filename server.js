@@ -35,6 +35,7 @@ app.get('/api/hint/:id', challengesCtrl.getHintInfo)
 app.post('/api/user/challenge', challengesCtrl.createUserChallenge)
 app.put('/api/user/challenge', challengesCtrl.updateUserChallenge)
 app.get('/api/users', usersCtrl.getUsers)
+app.get('/api/user/days/:id', challengesCtrl.getDaysInCode)
 
 
 

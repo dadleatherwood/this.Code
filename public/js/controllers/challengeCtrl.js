@@ -31,7 +31,7 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
           }
           $('#challengeModal').modal()
         } else {
-          myAppSrv.updateUserChallenge($stateParams.id, true)
+          myAppSrv.updateUserChallenge($stateParams.id, $scope.challenge.value)
           .then(function(){
             $scope.modal = {
               heading: 'Congratulations!',

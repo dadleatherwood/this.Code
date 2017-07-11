@@ -1,4 +1,6 @@
 angular.module('myApp').controller('usersCtrl', function($scope, $state, myAppSrv, $stateParams){
+
+
   $scope.getUsers = function(){
     myAppSrv.getUsers()
     .then(response => {
@@ -6,6 +8,11 @@ angular.module('myApp').controller('usersCtrl', function($scope, $state, myAppSr
       return response
     })
   }
+
+
+// WORKING HERE
+
+
 
   $scope.getUsers()
 })

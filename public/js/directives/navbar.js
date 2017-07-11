@@ -10,6 +10,10 @@ angular.module('myApp').directive('navbar', function(){
         $scope.loggedIn = true
         $scope.user = user
       })
+      $rootScope.$on('daysOfCode', function(event, daysOfCode) {
+        $scope.daysOfCode = daysOfCode
+        console.log(daysOfCode)
+      })
       $transitions.onBefore( { to: 'login' }, function(trans) {
         $scope.loggingIn = true
       });
