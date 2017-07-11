@@ -11,9 +11,9 @@
             <input type="text" class="form-control" ng-model="user.email" placeholder="Email" />
             <input type="password" class="form-control" ng-model="user.password" placeholder="Password" />
             <input type="password" class="form-control" ng-model="user.confirmPassword" placeholder="Confirm Password" />
-            <button type="button" class="btn" id="profile-login-btn" ng-disabled="checkInputs()" ng-click="createUser(user)">Sign Up</button>
+            <input type="text" class="form-control" placeholder="Insert image address" ng-model="user.imageurl" />
+            <input type="submit" class="btn" id="profile-login-btn" ng-disabled="checkInputs()" ng-click="createUser(user)" value="Sign Up"/>
             <div class="profile-login-error">{{createError}}</div>
-            <!-- button needs to change 'loggedIn' when successful as well -->
           </form>
         </div>
       </div>

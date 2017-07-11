@@ -30,7 +30,7 @@ angular.module('myApp').controller('loginCtrl', function($scope, $state, myAppSr
     return false
   }
 
-  
+
 
 
 })

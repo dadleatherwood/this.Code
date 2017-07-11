@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron leaderboard-jumbotron">
   <div class="intro-container">
     <h1>Leaderboard</h1>
     <p>
@@ -7,18 +7,17 @@
   </div>
 </div>
 
-<div class="jumbotron leaderboard-jumbotron">
+<div class="row leaderboard">
   <div class="row">
     <div class="col-md-offset-2 col-md-8 leader-container" ng-repeat="user in users">
       <div>
-        <!-- How to turn the url into the actual picture? -->
-        <img src="{{user.imageurl}}" />
+        <img src="{{user.imageurl}}" class="profile-image" />
       </div>
       <div>
-        <h3>{{user.username}}</h3>
+        <h4>{{user.username}}</h4>
       </div>
       <div>
-        <h3>{{user.score}}</h3>
+        <h4>Score: {{user.score}}</h4>
       </div>
 
     </div>

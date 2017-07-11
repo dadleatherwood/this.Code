@@ -22,8 +22,8 @@ module.exports = {
 
   createUser: (req, res, next) => {
     const dbInstance = req.app.get('db')
-    const {first_name, last_name, username, email, password} = req.body
-    const inputs = [first_name, last_name, username, email, password]
+    const {first_name, last_name, username, email, password, imageurl} = req.body
+    const inputs = [first_name, last_name, username, email, password, imageurl]
     dbInstance.create_user(inputs)
     .then(function(user){
       if (user.length) {
