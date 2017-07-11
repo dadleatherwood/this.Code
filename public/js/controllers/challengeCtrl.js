@@ -8,7 +8,9 @@ angular.module('myApp').controller('challengeCtrl', function($scope, $state, myA
 
 
   $scope.getChallengeById = function () {
-    myAppSrv.getChallengeById($stateParams.id).then(function(response) { $scope.challenge = response[0]
+    myAppSrv.getChallengeById($stateParams.id)
+    .then(function(response) {
+      $scope.challenge = response[0]
     })
   }
 

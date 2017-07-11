@@ -6,8 +6,9 @@ angular.module('myApp').directive('navbar', function(){
     },
     controller: function($scope, myAppSrv, $state, $rootScope, $transitions){
       $scope.loggedIn = false
-      $rootScope.$on('loggedIn', function() {
+      $rootScope.$on('loggedIn', function(event, user) {
         $scope.loggedIn = true
+        $scope.user = user
       })
       $transitions.onBefore( { to: 'login' }, function(trans) {
         $scope.loggingIn = true

@@ -25,7 +25,7 @@
           <form>
             <input type="text" class="form-control" ng-model="returningUser.username" placeholder="Username or Email" />
             <input type="password" class="form-control" ng-model="returningUser.password" placeholder="Password" />
-            <button type="button" class="btn" id="profile-login-btn" ng-click="loginUser(returningUser)">Login</button>
+            <input type="submit" class="btn" id="profile-login-btn" ng-click="loginUser(returningUser)" value="Login"></>
             <div class="profile-login-error">{{loginError}}</div>
           </form>
 

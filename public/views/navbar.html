@@ -53,9 +53,9 @@
             <li><a ui-sref="login">Discussion</a></li>
           </ul>
         </li>
-        <li>
-          <li><a ui-sref="login">Profile</a></li>
-        </li>
+        <li><img src="{{user.imageurl}}" class="navbar-profile-image" ui-sref="profile"/></li>
+        <li><a ui-sref="profile">{{user.username}}</a></li>
+
         <li>
           <!-- <button ng-show="loggedIn" ng-click="loggedIn = !loggedIn" ui-sref="home" type="button" class="btn btn-danger navbar-btn">Sign Out</button> -->
           <button ng-show="loggedIn" ng-click="signOut()" ui-sref="home" type="button" class="btn btn-danger navbar-btn">Sign Out</button>

@@ -6,7 +6,7 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
   this.createUser = function(user){
     return $http.post('/api/users', user).then(result => {
-      $rootScope.$emit('loggedIn', null)
+      $rootScope.$emit('loggedIn', result.data[0])
       self.user = result.data[0]
       return result
     })
@@ -15,7 +15,7 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
   this.loginUser = function(user){
     return $http.post('/api/login', user).then(result => {
-      $rootScope.$emit('loggedIn', null)
+      $rootScope.$emit('loggedIn', result.data[0])
       self.user = result.data[0]
       return result
     })
@@ -90,4 +90,5 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
       return result.data
     })
   }
+
 })

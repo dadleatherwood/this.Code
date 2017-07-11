@@ -21,6 +21,14 @@
   color: #4CAF50;
 }
 
+.navbar-profile-image {
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+  border: 2px solid #4CAF50;
+  border-radius: 50%;
+}
+
 /*splash*/
 .jumbotron {
   display: flex;
@@ -212,4 +220,6 @@
   width: 50px;
   height: 50px;
   margin: 2px 0px;
+  border: 2px solid #4CAF50;
+  border-radius: 50%;
 }

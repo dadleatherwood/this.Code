@@ -34,7 +34,11 @@ angular.module('myApp',['ui.router'])
       url: '/leaderboard',
       templateUrl: './views/leaderboard.html',
       controller: 'usersCtrl'
+    })
 
+    .state('profile', {
+      url: '/profile',
+      templateUrl: './views/user-profile.html'
     })
 
 
