@@ -9,13 +9,12 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-// setup email data with unicode symbols
 let mailOptions = {
-    from: '"this.Code()" <heythere@thiscode.com>', //  Can I send from dummy address?,
+    from: '"this.Code()" <heythere@thiscode.com>',
     to: '',
-    subject: 'Welcome to this.Code()', // Subject line
+    subject: 'Welcome to this.Code()',
     text: 'Welcome to this.Code(), a site designed to help you improve your JavaScript abilities with fun and complex coding challenges.  We hope you enjoy!', // plain text body
-    html: '<p>Welcome to this.Code(), a site designed to help you improve your JavaScript abilities with fun and complex coding challenges.  We hope you enjoy!</p>' // html body
+    html: '<p>Welcome to this.Code(), a site designed to help you improve your JavaScript abilities with fun and complex coding challenges.  We hope you enjoy!</p>'
 };
 
 
