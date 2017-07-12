@@ -1,5 +1,4 @@
-
-  <div class="jumbotron challenge-jumbotron">
+<div class="jumbotron challenge-jumbotron">
     <div class="challenge-intro-container">
       <h1>Challenge Page</h1>
       <p>
@@ -11,6 +10,8 @@
       <button class="btn btn-success btn-lg" ng-controller="scrollCtrl" ng-click="goToMaster()">Master</button>
     </div>
   </div>
+  <div class="container-fluid">
+
   <div class="row" id="beginner-challenges">
     <div class="col-md-offset-2 col-md-8 challenge-list"  ng-repeat="challenge in challenges.beginner" ng-class="{completed : challenge.completed, unattempted: challenge.completed == null, incomplete: challenge.completed == false}">
       <div>
@@ -42,4 +43,5 @@
         <h2>Point Value: {{challenge.value}}</h2>
       </div>
     </div>
-  </div>
+</div>
+</div>

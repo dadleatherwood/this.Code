@@ -1,18 +1,23 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
+const cors = require('cors')
 const config = require('./config.js')
 const massive = require('massive')
 const usersCtrl = require('./usersCtrl.js')
 const challengesCtrl = require('./challengesCtrl.js')
 
 const app = express()
-
+app.use(session({
+  secret: "Hellothere",
+  resave: true,
+  saveUninitialized: true
+}))
 app.use(bodyParser.json())
 app.use(express.static(__dirname + "/public"))
 
 
-massive('postgres://localhost:5432/this_code')
+massive('postgres://localhost:5432/this_code_2')
   .then(db => {
     app.set('db', db)
     db.create_users_table()

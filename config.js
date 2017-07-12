@@ -1,3 +1,3 @@
 module.exports = {
-  gmailPassword : 'cdebekk8496'
+  gmailPassword : 'nothing'
 }

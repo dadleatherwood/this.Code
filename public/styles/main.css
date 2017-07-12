@@ -37,7 +37,6 @@
   background-size: cover;
   height: 60vh;
   text-align: center;
-  margin-bottom: 0;
 }
 
 .jumbotron.main-splash {
@@ -65,8 +64,6 @@
 #section-1 {
   border-right: 3px solid #C9CACB;
 }
-
-
 
 #section-3 {
   border-left: 3px solid #C9CACB;
@@ -150,21 +147,18 @@
 
 
   #beginner-challenges {
-    /*margin: 10px auto;*/
     padding: 20px;
     background-image: url("../assets/images/green background.jpg");
     background-size: cover;
   }
 
   #intermediate-challenges {
-    /*margin: 2em auto;*/
     padding: 20px;
     background-image: url("../assets/images/yellow background.jpg");
     background-size: cover;
   }
 
   #master-challenges {
-    /*margin: 10px auto;*/
     padding: 20px;
     background-image: url("../assets/images/red background.jpg");
     background-size: cover;
