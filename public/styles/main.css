@@ -7,6 +7,7 @@
 
 .ui-view {
   margin-top: 50px;
+  margin-bottom: 65px;
 }
 
 /*navbar*/
@@ -245,4 +246,25 @@
   margin: 2px 0px;
   border: 2px solid #4CAF50;
   border-radius: 50%;
+}
+
+/*Footer*/
+
+#social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+#developed-by {
+  display: flex;
+  justify-content: center;
+}
+.fa.fa-github {
+  font-size: 2.5em;
+  color: #4CAF50;
+}
+
+.fa.fa-twitter {
+  font-size: 2.5em;
+  color: #4CAF50;
 }
