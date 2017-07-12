@@ -9,11 +9,12 @@ angular.module('myApp').directive('navbar', function(){
       $rootScope.$on('loggedIn', function(event, user) {
         $scope.loggedIn = true
         $scope.user = user
+
       })
       $rootScope.$on('daysOfCode', function(event, daysOfCode) {
         $scope.daysOfCode = daysOfCode
-        console.log(daysOfCode)
       })
+
       $transitions.onBefore( { to: 'login' }, function(trans) {
         $scope.loggingIn = true
       });
@@ -30,6 +31,11 @@ angular.module('myApp').directive('navbar', function(){
         $scope.user = {}
         myAppSrv.user = {}
       }
+
+
+
+
+
 
     }
   }

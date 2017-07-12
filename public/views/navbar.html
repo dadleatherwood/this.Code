@@ -52,10 +52,12 @@
             <li><a ui-sref="leaderboard">LeaderBoard</a></li>
             <li><a ui-sref="login">Discussion</a></li>
           </ul>
+          <li><img src="{{user.imageurl}}" class="navbar-profile-image" ui-sref="profile"/></li>
+          <li><a ui-sref="profile">{{user.username}}</a></li>
+          <li><a>Score: {{user.score}}</a></li>
+          <li><a>Days of Code: {{user.days_of_code}}</a></li>
         </li>
-        <li><img src="{{user.imageurl}}" class="navbar-profile-image" ui-sref="profile"/></li>
-        <li><a ui-sref="profile">{{user.username}}</a></li>
-        <li><a>{{user.score}}</a></li>
+
 
         <li>
           <!-- <button ng-show="loggedIn" ng-click="loggedIn = !loggedIn" ui-sref="home" type="button" class="btn btn-danger navbar-btn">Sign Out</button> -->

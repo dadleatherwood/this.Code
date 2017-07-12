@@ -89,6 +89,10 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
 
   this.updateUserChallenge = function(challengeId, challengeValue){
     return $http.put('/api/user/challenge/', {challenge_id: challengeId, user_id: self.user.id, completed: true, value: challengeValue})
+    .then(response => {
+      $rootScope.$emit('loggedIn', response.data[0])
+      return response
+    })
   }
 
 
@@ -107,6 +111,8 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
       return result.data[0]
     })
   }
+
+
 
 
 

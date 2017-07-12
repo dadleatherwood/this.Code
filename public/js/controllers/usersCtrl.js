@@ -9,10 +9,5 @@ angular.module('myApp').controller('usersCtrl', function($scope, $state, myAppSr
     })
   }
 
-
-// WORKING HERE
-
-
-
   $scope.getUsers()
 })
