@@ -75,7 +75,6 @@ module.exports = {
     const db = req.app.get('db')
     db.read_user_days(req.params.id)
     .then(result => {
-      console.log(result[0].update_days)
       if (result[0].greater_than_24 && result[0].less_than_48) {
         db.update_user_days(req.params.id)
         .then(result => {

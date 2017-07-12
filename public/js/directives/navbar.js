@@ -32,11 +32,6 @@ angular.module('myApp').directive('navbar', function(){
         myAppSrv.user = {}
       }
 
-
-
-
-
-
     }
   }
 })
