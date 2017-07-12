@@ -9,7 +9,7 @@ angular.module('myApp',['ui.router'])
 
     .state('home', {
       url: '/',
-      templateUrl: './views/splash.html'
+      templateUrl: './views/splash.html',
     })
 
     .state('login', {
@@ -21,13 +21,19 @@ angular.module('myApp',['ui.router'])
     .state('challenges', {
       url: '/challenges',
       templateUrl: './views/challenge-splash.html',
-      controller: 'challengesCtrl'
+      controller: 'challengesCtrl',
+      resolve: {
+        isAuthenticated: isAuthenticated
+      }
     })
 
     .state('challenge', {
       url: '/challenge/:id',
       templateUrl: './views/challenge-individual.html',
-      controller: 'challengeCtrl'
+      controller: 'challengeCtrl',
+      resolve: {
+        isAuthenticated: isAuthenticated
+      }
     })
 
     .state('leaderboard', {
@@ -36,10 +42,16 @@ angular.module('myApp',['ui.router'])
       controller: 'usersCtrl'
     })
 
-    .state('profile', {
-      url: '/profile',
-      templateUrl: './views/user-profile.html'
-    })
 
 
 })
+
+function isAuthenticated (myAppSrv, $state, $q) {
+  var deferred = $q.defer()
+  if(myAppSrv.user.id) {
+    $q.resolve(true)
+  } else {
+    $state.go('login')
+  }
+  return deferred.promise
+}

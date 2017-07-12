@@ -42,6 +42,7 @@
 
 .jumbotron.main-splash {
   margin-bottom: 0;
+  height: 100vh;
 }
 
 .intro-container {
@@ -255,10 +256,11 @@
   justify-content: center;
 }
 
-#developed-by {
+#developed-by.navbar-nav.nav {
   display: flex;
   justify-content: center;
 }
+
 .fa.fa-github {
   font-size: 2.5em;
   color: #4CAF50;
