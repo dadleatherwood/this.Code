@@ -22,18 +22,18 @@ angular.module('myApp',['ui.router'])
       url: '/challenges',
       templateUrl: './views/challenge-splash.html',
       controller: 'challengesCtrl',
-      resolve: {
-        isAuthenticated: isAuthenticated
-      }
+      // resolve: {
+      //   isAuthenticated: isAuthenticated
+      // }
     })
 
     .state('challenge', {
       url: '/challenge/:id',
       templateUrl: './views/challenge-individual.html',
       controller: 'challengeCtrl',
-      resolve: {
-        isAuthenticated: isAuthenticated
-      }
+      // resolve: {
+      //   isAuthenticated: isAuthenticated
+      // }
     })
 
     .state('leaderboard', {
@@ -42,16 +42,16 @@ angular.module('myApp',['ui.router'])
       controller: 'usersCtrl'
     })
 
-
-
 })
 
-function isAuthenticated (myAppSrv, $state, $q) {
-  var deferred = $q.defer()
-  if(myAppSrv.user.id) {
-    $q.resolve(true)
-  } else {
-    $state.go('login')
-  }
-  return deferred.promise
-}
+
+
+// function isAuthenticated (myAppSrv, $state, $q) {
+//   var deferred = $q.defer()
+//   if(myAppSrv.user.id) {
+//     setTimeout(function(){$q.resolve(true), console.log("working!");}, 4000)
+//   } else {
+//     $state.go('login')
+//   }
+//   return deferred.promise
+// }

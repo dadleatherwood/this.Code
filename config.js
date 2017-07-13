@@ -1,3 +1,4 @@
 module.exports = {
-  gmailPassword : 'nothing'
+  gmailPassword : 'greenbeans325',
+  port: 3000
 }

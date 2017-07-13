@@ -45,6 +45,6 @@ app.get('/api/user/days/:id', challengesCtrl.getDaysInCode)
 
 
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || config.port, function(){
   console.log("I am listening on port 3000")
 })
