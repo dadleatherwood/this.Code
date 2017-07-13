@@ -21,7 +21,10 @@ module.exports = {
 
   createUser: (req, res, next) => {
     const dbInstance = req.app.get('db')
-    const {first_name, last_name, username, email, password, imageurl} = req.body
+    let {first_name, last_name, username, email, password, imageurl} = req.body
+    if (!imageurl) {
+      imageurl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0j3_MAusO3LfJrLJ23l2TqODPw-wGkhTvVm1Opr5_yIgnBd-YWw"
+    }
     const inputs = [first_name, last_name, username, email, password, imageurl]
     dbInstance.create_user(inputs)
     .then(function(user){
