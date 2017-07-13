@@ -8,11 +8,7 @@ const usersCtrl = require('./usersCtrl.js')
 const challengesCtrl = require('./challengesCtrl.js')
 
 const app = express()
-app.use(session({
-  secret: "Hellothere",
-  resave: true,
-  saveUninitialized: true
-}))
+
 app.use(bodyParser.json())
 app.use(express.static(__dirname + "/public"))
 
