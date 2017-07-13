@@ -1,6 +1,5 @@
 angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   var self = this
-  // Remove guest id later
   this.user = {}
 
 
