@@ -1,8 +1,8 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const cors = require('cors')
-const config = require('./config.js')
 const massive = require('massive')
 const usersCtrl = require('./usersCtrl.js')
 const challengesCtrl = require('./challengesCtrl.js')
@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(express.static(__dirname + "/public"))
 
 
-massive(process.env.DATABASE_URL || config.databaseUrl)
+massive(process.env.DATABASE_URL)
   .then(db => {
     app.set('db', db)
     db.create_users_table()
@@ -45,6 +45,6 @@ app.get('/api/user/days/:id', challengesCtrl.getDaysInCode)
 
 
 
-app.listen(process.env.PORT || config.port, function(){
+app.listen(process.env.PORT, function(){
   console.log("I am listening on port 3000")
 })
