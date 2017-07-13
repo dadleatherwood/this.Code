@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid challenge-individual-container">
   <div class="row">
     <div class="col-md-offset-1 col-md-10 challenge-description">
       {{challenge.description}}
@@ -12,6 +12,7 @@
       </div>
     </div>
   </div>
+
   <div class="row challenge-buttons">
     <div class="col-xs-12 col-md-offest-2 col-md-4">
       <button type="button" class="btn btn-success run-btn col-xs-12 col-md-offset-4 col-md-4" ng-click="testCode(code)">Run</button>
@@ -20,8 +21,6 @@
       <button type="button" class="btn btn-info hint-btn col-xs-12 col-md-offset-4 col-md-4" ng-click="showHint({id: challenge.id})">Hint</button>
     </div>
   </div>
-
-
-  <modal modal="modal" failures="failures"></modal>
-
 </div>
+
+<modal modal="modal" failures="failures"></modal>
