@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(express.static(__dirname + "/public"))
 
 
-massive('postgres://localhost:5432/this_code_2')
+massive(process.env.DATABASE_URL || config.databaseUrl)
   .then(db => {
     app.set('db', db)
     db.create_users_table()
