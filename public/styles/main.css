@@ -115,11 +115,9 @@
   font-weight: bold;
 }
 
-#login-form {
-  margin-bottom: 100px!important;
+.col-xs-12#login-form {
+  margin-bottom: 100px;
 }
-
-
 
 /*challenge splash*/
 .jumbotron.challenge-jumbotron {
@@ -181,17 +179,21 @@
 
 .challenge-individual-container {
   background-image: url("../assets/images/oXAZlPv.png");
-  height: 100vh;
+  min-height: 100vh;
 }
-.challenge-description {
+
+/*::-webkit-scrollbar {display:none;}*/
+
+.challenge-description{
   margin: 4em auto;
   height: auto;
+  /*max-height: 100px;
+  overflow-y: auto;*/
   border: 3px solid #4CAF50;
   border-radius: 25px;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  padding: 2em;
 }
 
 .challenge-buttons {
@@ -292,3 +294,5 @@
   font-size: 2.5em;
   color: #4CAF50;
 }
+
+/*Media Queries*/
