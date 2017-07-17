@@ -9,7 +9,6 @@ angular.module('myApp').directive('navbar', function(){
       $rootScope.$on('loggedIn', function(event, user) {
         $scope.loggedIn = true
         $scope.user = user
-
       })
       $rootScope.$on('daysOfCode', function(event, daysOfCode) {
         $scope.daysOfCode = daysOfCode
@@ -28,9 +27,28 @@ angular.module('myApp').directive('navbar', function(){
 
       $scope.signOut = function() {
         $scope.loggedIn = false;
-        $scope.user = {}
-        myAppSrv.user = {}
+        myAppSrv.logoutUser()
+        .then(function(response) {
+            $scope.user = {}
+            $state.go('home')
+        })
+        .catch(function(err) {
+          console.log(err)
+        })
       }
+
+      // Check if returning user
+      myAppSrv.getUser()
+      .then(function(response) {
+        console.log(response.data)
+        $scope.loggedIn = true
+        $scope.user = response.data[0]
+        $state.go('challenges')
+      })
+      .catch(function(err) {
+        console.log("No user")
+      })
+
 
     }
   }

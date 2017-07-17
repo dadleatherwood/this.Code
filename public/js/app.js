@@ -45,12 +45,15 @@ angular.module('myApp',['ui.router'])
 })
 
 
-function isAuthenticated(myAppSrv, $q) {
+function isAuthenticated(myAppSrv, $q, $http, $state) {
   var deferred = $q.defer()
-  if(myAppSrv.user.id) {
+  $http.get('/api/user')
+  .then(function(response) {
     deferred.resolve()
-  } else {
-    deferred.reject("Unauthorized")
-  }
+  })
+  .catch(function(err) {
+    deferred.reject(err.message)
+    $state.go('login')
+  })
   return deferred.promise
 }

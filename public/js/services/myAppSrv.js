@@ -2,7 +2,16 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
   var self = this
   this.user = {}
 
-
+  this.getUser = function() {
+    return $http.get('/api/user')
+    .then(function(result) {
+      self.user = result.data[0]
+      return result
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
+  }
   this.createUser = function(user){
     return $http.post('/api/users', user)
     .then(result => {
@@ -12,7 +21,15 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
     })
   }
 
-
+  this.logoutUser = function() {
+    return $http.get('/api/logout')
+    .then(function(result) {
+      self.user = {}
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
+  }
   this.loginUser = function(user){
     return $http.post('/api/login', user)
     .then(result => {
