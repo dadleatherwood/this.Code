@@ -30,7 +30,6 @@ module.exports = {
 
   logoutUser: (req, res, next) => {
     req.session.destroy()
-    console.log(req.session)
     if (req.session && req.session.user) {
       return res.status(500).json("Something's wrong")
     }
