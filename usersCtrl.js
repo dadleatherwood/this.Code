@@ -29,6 +29,7 @@ module.exports = {
     dbInstance.create_user(inputs)
     .then(function(user){
       if (user.length) {
+        req.session.user = user
         // send mail with defined transport object
         const options = Object.assign({}, mailOptions, {to: email})
         transporter.sendMail(options, (error, info) => {
@@ -52,6 +53,7 @@ module.exports = {
     dbInstance.read_user([username, password])
     .then(function(user){
       if (user.length) {
+          req.session.user = user
           return res.status(200).json(user)
       }
       return res.status(401).json({message: "Incorrect login, please try again."})
