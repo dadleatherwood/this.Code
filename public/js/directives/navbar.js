@@ -30,6 +30,7 @@ angular.module('myApp').directive('navbar', function(){
         myAppSrv.logoutUser()
         .then(function(response) {
             $scope.user = {}
+            localStorage.removeItem("token")
             $state.go('home')
         })
         .catch(function(err) {
@@ -40,9 +41,11 @@ angular.module('myApp').directive('navbar', function(){
       // Check if returning user
       myAppSrv.getUser()
       .then(function(response) {
-        $scope.loggedIn = true
-        $scope.user = response.data[0]
-        $state.go('challenges')
+        if (localStorage.getItem("token")) {
+          $scope.loggedIn = true
+          $scope.user = response.data[0]
+          $state.go('challenges')
+        }
       })
       .catch(function(err) {
         console.log("No user")

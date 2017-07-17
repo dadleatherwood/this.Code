@@ -3,6 +3,7 @@ angular.module('myApp').controller('loginCtrl', function($scope, $state, myAppSr
     myAppSrv.createUser(user)
     .then(function(response){
       if (response.status === 200) {
+        localStorage.setItem("token", response.data[0].username)
         $state.go('challenges')
       }
     })
@@ -15,6 +16,7 @@ angular.module('myApp').controller('loginCtrl', function($scope, $state, myAppSr
     myAppSrv.loginUser(user)
     .then(function(response){
       if (response.status === 200) {
+        localStorage.setItem("token", response.data[0].username)
         $state.go('challenges')
       }
     })

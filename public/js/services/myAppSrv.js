@@ -12,6 +12,7 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
       console.log(err)
     })
   }
+  
   this.createUser = function(user){
     return $http.post('/api/users', user)
     .then(result => {
