@@ -58,8 +58,32 @@ angular.module('myApp').service('myAppSrv',function($http, $rootScope){
           var failures = []
           for (var test of result.data) {
             var answer = func.apply(null, test.test_inputs)
-            if (answer !== test.test_outputs) {
-              failures.push("expected " + test.test_outputs + "; received " + answer + " --- Failed Test")
+            if (Array.isArray(test.test_outputs)) {
+              if (!Array.isArray(answer)) {
+                failures.push("expected array; received " + typeof answer + "--- Failed Test")
+              } else {
+                for (var i = 0; i < test.test_outputs.length; i++) {
+                  if (test.test_outputs[i] !== answer[i]) {
+                    failures.push("expected " + test.test_outputs[i] + "; received " + answer[i] + " --- Failed Test")
+                  }
+                }
+              }
+            } else if (typeof test.test_ouputs === 'object') {
+              if (!typeof answer !== 'object') {
+                failures.push("expected object; received " + typeof answer + "--- Failed Test")
+              } else {
+                for (var key in test.test_outputs) {
+                  if (!answer[key]) {
+                    failures.push("expected property name" + key +  "; received undefined")
+                  } else if (answer[key] !== test.test_outputs[key]){
+                    failoures.push("expected " + test.test_outputs[key] + "; received " + answer[key] + " --- Failed Test")
+                  }
+                }
+              }
+            } else {
+              if (answer !== test.test_outputs) {
+                failures.push("expected " + test.test_outputs + "; received " + answer + " --- Failed Test")
+              }
             }
           }
           return failures
