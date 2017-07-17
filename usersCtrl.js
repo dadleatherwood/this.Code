@@ -21,7 +21,6 @@ module.exports = {
 
   getUser: (req, res, next) => {
     if (req.session && req.session.user) {
-      console.log(req.session.user)
       return res.status(200).json(req.session.user)
     } else {
       return res.status(401).json("unauthorized")

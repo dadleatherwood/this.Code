@@ -15,7 +15,7 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: process.env.SESSION_RESAVE,
   saveUninitialized: process.env.SESSION_SAVE_UNINITIALIZED,
-  maxAge:  new Date(Date.now() + 3600000)
+  maxAge:  new Date(Date.now() + 900000)
 }))
 
 
