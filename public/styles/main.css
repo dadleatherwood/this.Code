@@ -36,6 +36,11 @@
   margin-left: 15px;
 }
 
+.sign-out {
+  background-color: #FAD556!important;
+  border-color: #F1BE09!important;
+}
+
 
 /*splash*/
 .jumbotron {
