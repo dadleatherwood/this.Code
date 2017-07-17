@@ -19,6 +19,24 @@ let mailOptions = {
 
 module.exports = {
 
+  getUser: (req, res, next) => {
+    if (req.session && req.session.user) {
+      console.log(req.session.user)
+      return res.status(200).json(req.session.user)
+    } else {
+      return res.status(401).json("unauthorized")
+    }
+  },
+
+  logoutUser: (req, res, next) => {
+    req.session.destroy()
+    console.log(req.session)
+    if (req.session && req.session.user) {
+      return res.status(500).json("Something's wrong")
+    }
+    return res.status(200).json("Logged out")
+  },
+
   createUser: (req, res, next) => {
     const dbInstance = req.app.get('db')
     let {first_name, last_name, username, email, password, imageurl} = req.body
@@ -29,6 +47,7 @@ module.exports = {
     dbInstance.create_user(inputs)
     .then(function(user){
       if (user.length) {
+        delete user[0].password
         req.session.user = user
         // send mail with defined transport object
         const options = Object.assign({}, mailOptions, {to: email})
@@ -53,6 +72,7 @@ module.exports = {
     dbInstance.read_user([username, password])
     .then(function(user){
       if (user.length) {
+          delete user[0].password
           req.session.user = user
           return res.status(200).json(user)
       }
