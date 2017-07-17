@@ -40,7 +40,6 @@ angular.module('myApp').directive('navbar', function(){
       // Check if returning user
       myAppSrv.getUser()
       .then(function(response) {
-        console.log(response.data)
         $scope.loggedIn = true
         $scope.user = response.data[0]
         $state.go('challenges')
